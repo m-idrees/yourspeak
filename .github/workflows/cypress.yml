@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run || true  # allows uploading screenshots even on failure
+        run: npx cypress run || true  # Allow failure to still upload videos/screenshots
 
       - name: Upload Cypress screenshots
         if: always()
