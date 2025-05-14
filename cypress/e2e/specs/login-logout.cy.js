@@ -1,17 +1,17 @@
 describe('template spec', () => {
-  // it('Login & Logout', () => {
-  //   cy.visit('https://dev.yourspeak.com/hub')
-  //   cy.get('.login___StyledDiv5-sc-1rkvmji-9 > input').type('emch31')
-  //   cy.get('.login___StyledDiv7-sc-1rkvmji-13 > input').type('12345678')
-  //   cy.get('.form-button__StyledButton-sc-uyp3s-0').click().wait(6000)
-  //   cy.get('.main-app-header___StyledDiv7-sc-yazxwz-24').click().wait(2000)
-  //   cy.contains('Logout').click()
-  //   Cypress.on('uncaught:exception', (err, runnable) => {
-  //     // returning false here prevents Cypress from
-  //     // failing the test
-  //     return false
-  //   })
-  // })
+  it('Login & Logout', () => {
+    cy.visit('https://dev.yourspeak.com/hub')
+    cy.get('.login___StyledDiv5-sc-1rkvmji-9 > input').type('emch31')
+    cy.get('.login___StyledDiv7-sc-1rkvmji-13 > input').type('12345678')
+    cy.get('.form-button__StyledButton-sc-uyp3s-0').click().wait(6000)
+    cy.get('.main-app-header___StyledDiv7-sc-yazxwz-24').click().wait(2000)
+    cy.contains('Logout').click()
+    Cypress.on('uncaught:exception', (err, runnable) => {
+      // returning false here prevents Cypress from
+      // failing the test
+      return false
+    })
+  })
 
   // function generateNewUsername() {
   //   let text = "";
