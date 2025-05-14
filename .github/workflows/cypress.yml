@@ -23,18 +23,4 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: npx cypress run || true  # Allow failure to still upload videos/screenshots
-
-      - name: Upload Cypress screenshots
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-
-      - name: Upload Cypress videos
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-videos
-          path: cypress/videos
+        run: npx cypress run
