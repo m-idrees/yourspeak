@@ -25,14 +25,16 @@ jobs:
         run: npx cypress run
 
       - name: Upload Cypress Videos
-        
+        if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: cypress-videos
           path: cypress/videos
 
       - name: Upload Cypress Screenshots
-        
+        if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
