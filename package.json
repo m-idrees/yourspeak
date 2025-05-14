@@ -1,0 +1,17 @@
+{
+  "name": "dct-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^13.15.0",
+    "cypress-file-upload": "^5.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:chrome": "cypress run --browser edge"
+  },
+  "author": "",
+  "license": "ISC"
+}
