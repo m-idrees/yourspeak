@@ -1,18 +1,19 @@
-describe('template spec', () => {
-  it('Login & Logout', () => {
-    cy.visit('https://dev.yourspeak.com/hub')
-    cy.get('.login___StyledDiv5-sc-1rkvmji-9 > input').type('emch31')
-    cy.get('.login___StyledDiv7-sc-1rkvmji-13 > input').type('12345678')
-    cy.get('.form-button__StyledButton-sc-uyp3s-0').click().wait(6000)
-    cy.get('.main-app-header___StyledDiv7-sc-yazxwz-24').click().wait(2000)
-    cy.contains('Logout').click()
-    Cypress.on('uncaught:exception', (err, runnable) => {
-      // returning false here prevents Cypress from
-      // failing the test
-      //
-      return false
-    })
-  })
+describe('your speak', () => {
+  // it('Login & Logout', () => {
+  //   cy.clearCookies()
+  //   cy.visit('https://dev.yourspeak.com/hub')
+  //   cy.get('.login___StyledDiv5-sc-1rkvmji-9 > input').type('emch31')
+  //   cy.get('.login___StyledDiv7-sc-1rkvmji-13 > input').type('12345678')
+  //   cy.get('.form-button__StyledButton-sc-uyp3s-0').click().wait(6000)
+  //   cy.get('.main-app-header___StyledDiv7-sc-yazxwz-24').click().wait(2000)
+  //   cy.contains('Logout').click()
+  //   Cypress.on('uncaught:exception', (err, runnable) => {
+  //     // returning false here prevents Cypress from
+  //     // failing the test
+  //     //
+  //     return false
+  //   })
+  // })
 
   // function generateNewUsername() {
   //   let text = "";
@@ -47,6 +48,7 @@ describe('template spec', () => {
   // })
 
   it('Create Post', () => {
+    cy.clearAllCookies()
     cy.visit('https://dev.yourspeak.com/hub')
     cy.get('.login___StyledDiv5-sc-1rkvmji-9 > input').type('emch31')
     cy.get('.login___StyledDiv7-sc-1rkvmji-13 > input').type('12345678')
@@ -63,9 +65,10 @@ describe('template spec', () => {
     cy.get('.form-text-area__StyledTextArea-sc-19ozadn-0').type("This is an automated post created by Cypress.")
     cy.get('.pac-target-input').type("New York, NY, USA{enter}")
     cy.get('.styled__StyledUploader-sc-vzh6wd-5').click().wait(2000)
-    cy.get('input[type="file"]').attachFile('img.jpg', { force: true }).wait(10000)
+    cy.get('input[type="file"]').attachFile('img.jpg', { force: true })
     cy.get('.form-button__StyledButton-sc-uyp3s-0').click()
-    cy.get('.preview-modal___StyledMain-sc-290qiy-3 > .secondary-header-layout__StyledHeaderContainer-sc-11b3s55-0 > .form-button__StyledButton-sc-uyp3s-0').click()
+    cy.get('.preview-modal___StyledMain-sc-290qiy-3 > .secondary-header-layout__StyledHeaderContainer-sc-11b3s55-0 > .form-button__StyledButton-sc-uyp3s-0').click().wait(2000)
+    
   })
   
 })
