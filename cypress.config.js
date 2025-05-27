@@ -2,11 +2,11 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    viewportWidth: 1366,
-    viewportHeight: 720,
+    viewportWidth: 1440,
+    viewportHeight: 1080,
     retries: {
-      runMode: 2,    // Retries when running via CLI (e.g., CI)
-      openMode: 1    // Retries when running via Cypress UI
+      runMode: 2,   
+      openMode: 2   
     },
     
     setupNodeEvents(on, config) {
